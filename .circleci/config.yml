@@ -24,18 +24,24 @@ jobs:
     steps:
       # Checkout the code as the first step.
       - checkout
-      - android/save-gradle-cache
-      - android/restore-gradle-cache
+
+      - android/save-gradle-cache:
+          cache-prefix: $gradle 
 
       - run:
           name: chmod permissions
           command: chmod +x ./gradlew
 
+      #- run:
+       #   name: ktlint check
+        #  command: |
+         #   ./gradlew ktlintCheck
+
       # And finally run the release build
-      - run:
-          name: Assemble debug build
-          command: |
-            ./gradlew assembleDebug
+      #- run:
+          #name: Assemble debug build
+          #command: |
+            #./gradlew assembleDebug
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -43,4 +49,5 @@ workflows:
   sample: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
     jobs:
-      - build
+      - build:
+          context: project
