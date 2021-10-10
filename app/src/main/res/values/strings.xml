@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Practice_DataBinding</string>
+    <string name="image_desc_profile_image">profile image</string>
+    <string name="main_button_change_profile">프로필 변경하기</string>
+    <string name="main_profile_edit_url_label">url을 입력해주세요</string>
+    <string name="main_profile_edit_name_label">이름을 입력해주세요</string>
+    <string name="main_profile_edit_complete_button">완료하기</string>
+</resources>
