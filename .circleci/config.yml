@@ -32,17 +32,17 @@ jobs:
           name: chmod permissions
           command: chmod +x ./gradlew
 
-      #- run:
-       #   name: ktlint check
-        #  command: |
-         #   ./gradlew ktlintCheck
+      - run:
+          name: ktlint check
+          command: |
+            ./gradlew ktlintCheck
 
       # And finally run the release build
-      #- run:
-          #name: Assemble debug build
-          #command: |
-            #./gradlew assembleDebug
-            
+      - run:
+          name: Assemble debug build
+          command: |
+            ./gradlew assembleDebug
+
       - android/save-gradle-cache:
           cache-prefix: $gradle 
 
